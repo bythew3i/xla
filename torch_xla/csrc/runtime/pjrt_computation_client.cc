@@ -274,7 +274,9 @@ std::vector<ComputationClient::DataPtr> PjRtComputationClient::TransferToDevice(
                           tensor->dimensions(), tensor->byte_strides(),
                           xla::PjRtClient::HostBufferSemantics::
                               kImmutableUntilTransferCompletes,
-                          [tensor]() { /* frees tensor */ }, pjrt_device)
+                          [tensor]() { /* frees tensor */ },
+			  *pjrt_device->default_memory_space(),
+			  nullptr)
                       .value());
 
     ComputationClient::DataPtr data =

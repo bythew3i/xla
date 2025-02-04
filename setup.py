@@ -66,9 +66,9 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 
 USE_NIGHTLY = True  # whether to use nightly or stable libtpu and jax
 
-_date = '20250131'
+_date = '20250204'
 
-# Note: jax/jaxlib 20250115 build will fail. Check https://github.com/pytorch/xla/pull/8621#issuecomment-2616564634 for more details.
+# Note: jax/jaxlib are not always have the same version number.
 _libtpu_version = '0.0.9'
 _jax_version = '0.5.1'
 _jaxlib_version = '0.5.1'
